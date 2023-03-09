@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Navbar } from 'flowbite-react';
 import { signIn, signOut, useSession } from 'next-auth/react';
 import styles from './header.module.css';
 
@@ -64,31 +64,26 @@ export default function Header() {
           )}
         </p>
       </div>
-      <nav>
-        <ul className={styles.navItems}>
-          <li className={styles.navItem}>
-            <Link href="/">Home</Link>
-          </li>
-          <li className={styles.navItem}>
-            <Link href="/client">Client</Link>
-          </li>
-          <li className={styles.navItem}>
-            <Link href="/server">Server</Link>
-          </li>
-          <li className={styles.navItem}>
-            <Link href="/protected">Protected</Link>
-          </li>
-          <li className={styles.navItem}>
-            <Link href="/api-example">API</Link>
-          </li>
-          <li className={styles.navItem}>
-            <Link href="/admin">Admin</Link>
-          </li>
-          <li className={styles.navItem}>
-            <Link href="/me">Me</Link>
-          </li>
-        </ul>
-      </nav>
+
+      <Navbar fluid={true} rounded={true}>
+        <Navbar.Brand href="/">
+          <img
+            src="https://flowbite.com/docs/images/logo.svg"
+            className="mr-3 h-6 sm:h-9"
+            alt="Flowbite Logo"
+          />
+          <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+            Flowbite
+          </span>
+        </Navbar.Brand>
+        <Navbar.Toggle />
+        <Navbar.Collapse>
+          <Navbar.Link href="/api-example">API</Navbar.Link>
+          <Navbar.Link href="/gist">Gist</Navbar.Link>
+          <Navbar.Link href="/repo">Repo</Navbar.Link>
+          <Navbar.Link href="/dashboard">Dashboard</Navbar.Link>
+        </Navbar.Collapse>
+      </Navbar>
     </header>
   );
 }
