@@ -1,4 +1,4 @@
-import { Octokit } from '@octokit/core';
+import { Octokit } from '@octokit/rest';
 import { OctokitOptions } from '@octokit/core/dist-types/types';
 import { StatusCodes } from 'http-status-codes';
 import type { NextApiRequest, NextApiResponse } from 'next';
@@ -6,16 +6,15 @@ import { getServerSession } from 'next-auth';
 import { RepoRequest, repoRequestSchema } from '../../../helpers/schema';
 import { authOptions } from '../auth/[...nextauth]';
 
+export type Repository = Awaited<ReturnType<typeof getRepositoryInfo>>;
+
 export const getRepositoryInfo = async (
   options: OctokitOptions,
   request: RepoRequest,
 ) => {
   const octokit = new Octokit(options);
 
-  const { data: repo } = await octokit.request(
-    'GET /repos/{owner}/{repo}',
-    request,
-  );
+  const { data: repo } = await octokit.repos.get(request);
 
   return repo;
 };

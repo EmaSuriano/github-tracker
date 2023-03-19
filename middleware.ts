@@ -9,4 +9,4 @@ export default withAuth({
   },
 });
 
-export const config = { matcher: ['/gist', '/repo', '/overview'] };
+export const config = { matcher: ['/gist', '/repo', '/dashboard'] };

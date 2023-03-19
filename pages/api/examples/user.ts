@@ -13,8 +13,6 @@ export default async function handler(
   if (!session) {
     return res.status(401).json({ error: 'Please log in to submit' });
   }
-  console.log(session);
-  console.log('accessToken: ', session.accessToken);
 
   const octokit = new Octokit({
     auth: session.accessToken,

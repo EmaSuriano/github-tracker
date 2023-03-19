@@ -1,13 +1,18 @@
-import Header from "./header"
-import Footer from "./footer"
-import type { ReactNode } from "react"
+import Header from './header';
+import Footer from './footer';
+import type { ReactNode } from 'react';
 
-export default function Layout({ children }: { children: ReactNode }) {
+type Props = {
+  children: ReactNode;
+  className?: string;
+};
+
+export default function Layout({ children, className }: Props) {
   return (
     <>
       <Header />
-      <main>{children}</main>
+      <main className={`mt-20 mb-10 ${className}`}>{children}</main>
       <Footer />
     </>
-  )
+  );
 }

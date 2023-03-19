@@ -20,7 +20,9 @@ export default function App({
   return (
     <QueryClientProvider client={queryClient}>
       <SessionProvider session={session}>
-        <Component {...pageProps} />
+        <div className="container mx-auto">
+          <Component {...pageProps} />
+        </div>
       </SessionProvider>
     </QueryClientProvider>
   );
