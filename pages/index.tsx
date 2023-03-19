@@ -61,14 +61,14 @@ export default function IndexPage() {
     <Layout className="px-12">
       <section className="mx-auto max-w-7xl">
         <div className="w-full mx-auto text-left md:w-11/12 xl:w-9/12 md:text-center">
-          <h1 className="mb-8 text-4xl font-extrabold leading-none tracking-normal text-gray-900 md:text-6xl md:tracking-tight">
+          <h1 className="mb-8 text-4xl font-extrabold leading-none tracking-normal dark:text-white text-gray-900 md:text-6xl md:tracking-tight">
             <span>Start</span>{' '}
             <span className="block w-full py-2 text-transparent bg-clip-text leading-12 bg-gradient-to-r from-green-400 to-purple-500 lg:inline">
               tracking
             </span>{' '}
             <span>your GitHub projects?</span>
           </h1>
-          <p className="px-0 mb-8 text-lg text-gray-600 md:text-xl lg:px-24">
+          <p className="px-0 mb-8 text-lg text-gray-600 dark:text-gray-400 md:text-xl lg:px-24">
             Get actionable GitHub repository real-time data with a simple Sign
             in. Connected with GitHub Gist.
           </p>
@@ -86,7 +86,7 @@ export default function IndexPage() {
             </a>
             <a
               href="#learn-more"
-              className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg bg-gray-100 rounded-2xl sm:w-auto sm:mb-0"
+              className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg bg-gray-100 dark:bg-gray-400 rounded-2xl sm:w-auto sm:mb-0"
             >
               Learn More
               {BULB_ICON}

@@ -63,7 +63,7 @@ const NavbarLinks = () => {
             href="/api/auth/signout"
             onClick={(e) => {
               e.preventDefault();
-              signOut();
+              signOut({ callbackUrl: '/' });
             }}
           >
             Sign out
