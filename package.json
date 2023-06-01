@@ -15,7 +15,7 @@
   "author": "Emanuel Suriano",
   "dependencies": {
     "@headlessui/react": "^1.7.15",
-    "@heroicons/react": "^2.0.17",
+    "@heroicons/react": "^2.0.18",
     "@octokit/core": "^4.2.1",
     "@octokit/rest": "^19.0.11",
     "date-fns": "^2.30.0",
