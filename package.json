@@ -16,7 +16,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.15",
     "@heroicons/react": "^2.0.17",
-    "@octokit/core": "^4.2.0",
+    "@octokit/core": "^4.2.1",
     "@octokit/rest": "^19.0.7",
     "date-fns": "^2.30.0",
     "flowbite": "^1.6.5",
