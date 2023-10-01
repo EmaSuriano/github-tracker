@@ -35,7 +35,7 @@
     "@types/react": "^18.2.21",
     "autoprefixer": "^10.4.15",
     "http-status-codes": "^2.2.0",
-    "postcss": "^8.4.29",
+    "postcss": "^8.4.31",
     "prettier-plugin-organize-imports": "^3.2.3",
     "tailwindcss": "^3.3.3",
     "typescript": "^4"
