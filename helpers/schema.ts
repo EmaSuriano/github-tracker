@@ -7,15 +7,21 @@ export const repoRequestSchema = z.object({
   repo: z.string(),
 });
 
+export const workflowRequestSchema = z.object({
+  owner: z.string(),
+  repo: z.string(),
+  branch: z.string(),
+});
+
 export type RepoRequest = z.infer<typeof repoRequestSchema>;
+export type WorkflowRequest = z.infer<typeof workflowRequestSchema>;
 
 export const gistContentSchema = z.object({
   projects: z.array(z.string().regex(PROJECT_REGEX)),
   threshold: z
     .object({
-      pullRequests: z.number().optional(),
+      pulls: z.number().optional(),
       issues: z.number().optional(),
-      vulnerabilityAlerts: z.number().optional(),
     })
     .optional(),
 });

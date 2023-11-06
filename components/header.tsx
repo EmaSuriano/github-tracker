@@ -1,12 +1,13 @@
-import { Navbar } from 'flowbite-react';
+import { Avatar, Dropdown, Navbar } from 'flowbite-react';
 import { signIn, signOut, useSession } from 'next-auth/react';
 import { notReachable } from '../helpers/notReachable';
-import { useRouter } from 'next/router';
+import { Octokit } from '@octokit/rest';
+import { useQuery } from 'react-query';
 
 export default function Header() {
   return (
     <header>
-      <Navbar fluid={true} rounded={true}>
+      <Navbar fluid rounded>
         <Navbar.Brand href="/">
           <div className="flex space-x-2">
             <svg
@@ -28,7 +29,6 @@ export default function Header() {
             </span>
           </div>
         </Navbar.Brand>
-        <Navbar.Toggle />
         <NavbarLinks />
       </Navbar>
     </header>
@@ -36,48 +36,60 @@ export default function Header() {
 }
 
 const NavbarLinks = () => {
-  const router = useRouter();
   const session = useSession();
 
   switch (session.status) {
     case 'loading':
     case 'unauthenticated':
       return (
-        <Navbar.Collapse>
-          <Navbar.Link
-            href="/auth/signin"
-            onClick={(e) => {
-              e.preventDefault();
-              signIn();
-            }}
-          >
-            Sign in
-          </Navbar.Link>
-        </Navbar.Collapse>
+        <>
+          <Navbar.Toggle />
+          <Navbar.Collapse>
+            <Navbar.Link
+              href="/auth/signin"
+              onClick={(e) => {
+                e.preventDefault();
+                signIn();
+              }}
+            >
+              Sign in
+            </Navbar.Link>
+          </Navbar.Collapse>
+        </>
       );
 
     case 'authenticated':
-      return (
-        <Navbar.Collapse>
-          <Navbar.Link
-            href="/dashboard"
-            active={router.pathname === '/dashboard'}
-          >
-            Dashboard
-          </Navbar.Link>
-          <Navbar.Link
-            href="/api/auth/signout"
-            onClick={(e) => {
-              e.preventDefault();
-              signOut({ callbackUrl: '/' });
-            }}
-          >
-            Sign out
-          </Navbar.Link>
-        </Navbar.Collapse>
-      );
+      return <UserAvatar accessToken={session.data.accessToken} />;
 
     default:
       return notReachable(session);
   }
+};
+
+const UserAvatar = ({ accessToken }: { accessToken: string }) => {
+  const octokit = new Octokit({ auth: accessToken });
+  const query = useQuery(['/user'], () => octokit.request('GET /user'));
+
+  return (
+    <Dropdown
+      arrowIcon={false}
+      inline
+      placement="bottom-end"
+      label={
+        <Avatar alt="User settings" img={query.data?.data.avatar_url} rounded />
+      }
+    >
+      <Dropdown.Header>
+        <span className="block text-sm">Signed in as</span>
+        <span className="block truncate text-sm font-medium">
+          {query.data?.data.name}
+        </span>
+      </Dropdown.Header>
+      <Dropdown.Item href="/dashboard">Dashboard</Dropdown.Item>
+      <Dropdown.Divider />
+      <Dropdown.Item onClick={() => signOut({ callbackUrl: '/' })}>
+        Sign out
+      </Dropdown.Item>
+    </Dropdown>
+  );
 };

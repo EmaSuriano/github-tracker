@@ -2,7 +2,7 @@ import { Octokit } from '@octokit/rest';
 import { useSession } from 'next-auth/react';
 import { useQuery } from 'react-query';
 import { notReachable } from '../helpers/notReachable';
-import { Repository } from '../pages/api/examples/repo';
+import { Repository } from '../pages/api/github/repo';
 
 type PullStatusIconProps = {
   repo: Repository;

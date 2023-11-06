@@ -1,11 +1,12 @@
 import { QueryFunction, QueryKey, useQuery } from 'react-query';
 
 import { notReachable } from '../helpers/notReachable';
+import { ReactNode } from 'react';
 
 type AsyncCellProps<TData> = {
   queryKey: QueryKey;
   queryFn: QueryFunction<TData>;
-  onLoad: (data: TData) => JSX.Element;
+  onLoad: (data: TData) => ReactNode;
 };
 
 export const AsyncCell = <TData extends object>({
