@@ -1,10 +1,5 @@
-import { Avatar, Button, Dropdown, Navbar } from 'flowbite-react';
-import {
-  SessionContextValue,
-  signIn,
-  signOut,
-  useSession,
-} from 'next-auth/react';
+import { Navbar } from 'flowbite-react';
+import { signIn, signOut, useSession } from 'next-auth/react';
 import { notReachable } from '../helpers/notReachable';
 import { useRouter } from 'next/router';
 

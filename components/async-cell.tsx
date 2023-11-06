@@ -8,7 +8,7 @@ type AsyncCellProps<TData> = {
   onLoad: (data: TData) => JSX.Element;
 };
 
-export const AsyncCell = <TData extends Object>({
+export const AsyncCell = <TData extends object>({
   queryKey,
   queryFn,
   onLoad,
