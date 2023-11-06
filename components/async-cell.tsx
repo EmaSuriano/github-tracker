@@ -30,7 +30,7 @@ export const AsyncCell = <TData extends object>({
       return <div>Failed to load</div>;
 
     case 'success':
-      return onLoad(query.data);
+      return <>{onLoad(query.data)}</>;
 
     /* istanbul ignore next */
     default:

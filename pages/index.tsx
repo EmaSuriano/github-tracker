@@ -3,6 +3,7 @@ import { getSession, signIn } from 'next-auth/react';
 import { FAQ } from '../components/sections/faq';
 import { Features } from '../components/sections/features';
 import Layout from '../components/layout';
+import Image from 'next/image';
 
 const QUESTIONS = [
   {
@@ -104,7 +105,10 @@ export default function IndexPage() {
                 <div className="w-3 h-3 border-2 border-white rounded-full"></div>
               </div>
             </div>
-            <img src="https://cdn.devdojo.com/images/march2021/green-dashboard.jpg" />
+            <Image
+              alt="Dashboard"
+              src="https://cdn.devdojo.com/images/march2021/green-dashboard.jpg"
+            />
           </div>
         </div>
       </section>
