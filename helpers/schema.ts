@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const PROJECT_REGEX = /([^\/]+)\/([^\/]+)/;
+export const PROJECT_REGEX = /([^/]+)\/([^/]+)/;
 
 export const repoRequestSchema = z.object({
   owner: z.string(),

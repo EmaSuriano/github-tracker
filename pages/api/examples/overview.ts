@@ -12,7 +12,7 @@ export const getOverview = async (options: OctokitOptions) => {
   const projects = await Promise.all(
     gistContent.projects.map((url) => {
       const match = url.match(PROJECT_REGEX)!;
-      const [_, owner, repo] = match;
+      const [, owner, repo] = match;
 
       return getRepositoryInfo(options, { owner, repo });
     }),
