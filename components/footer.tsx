@@ -6,7 +6,10 @@ export default function Footer() {
     <footer className="w-full py-4 bg-white md:flex md:items-center md:justify-between md:py-6 dark:bg-gray-800 dark:border-gray-600">
       <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
         Made by{' '}
-        <a href="https://emasuriano.com/" className="hover:underline">
+        <a
+          href="https://emasuriano.com/"
+          className="text-white hover:underline"
+        >
           Ema Suriano
         </a>
       </span>
@@ -16,7 +19,7 @@ export default function Footer() {
             href="https://github.com/EmaSuriano/github-oss-dashboard"
             className="hover:underline"
           >
-            Github
+            Github Repository
           </a>
         </li>
       </ul>

@@ -62,11 +62,11 @@ export default function IndexPage() {
       <section className="mx-auto max-w-7xl">
         <div className="w-full mx-auto text-left md:w-11/12 xl:w-9/12 md:text-center">
           <h1 className="mb-8 text-4xl font-extrabold leading-none tracking-normal dark:text-white text-gray-900 md:text-6xl md:tracking-tight">
-            <span>Start</span>{' '}
+            <span>Your</span>{' '}
             <span className="block w-full py-2 text-transparent bg-clip-text leading-12 bg-gradient-to-r from-green-400 to-purple-500 lg:inline">
-              tracking
+              GitHub
             </span>{' '}
-            <span>your GitHub projects?</span>
+            <span>Snapshot in Seconds</span>
           </h1>
           <p className="px-0 mb-8 text-lg text-gray-600 dark:text-gray-400 md:text-xl lg:px-24">
             Get actionable GitHub repository real-time data with a simple Sign
