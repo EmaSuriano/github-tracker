@@ -13,7 +13,7 @@ jobs:
         with:
           node-version-file: '.nvmrc'
 
-      - run: yarn install --frozen-lockfile
-      - run: yarn lint
-      - run: yarn check-types
-      - run: yarn build
+      - run: npm install
+      - run: npm run lint
+      - run: npm run check-types
+      - run: npm run build

@@ -1,6 +1,6 @@
 name: ci
 
-on: 
+on:
   push:
     branches:
       - master
@@ -17,6 +17,5 @@ jobs:
         with:
           node-version-file: '.nvmrc'
 
-      - run: yarn install --frozen-lockfile
-
-      - run: yarn build
+      - run: npm install
+      - run: npm run build

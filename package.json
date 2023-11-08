@@ -5,7 +5,7 @@
   "bugs": {
     "url": "https://github.com/EmaSuriano/github-tracker/issues"
   },
-  "homepage": "https://github-tracker.vercel.app",
+  "homepage": "https://github-oss-tracker.vercel.app",
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -15,10 +15,10 @@
   },
   "author": "Emanuel Suriano",
   "dependencies": {
-    "@octokit/core": "^4.2.4",
-    "@octokit/rest": "^19.0.13",
+    "@octokit/core": "^5.0.1",
+    "@octokit/rest": "^20.0.2",
     "date-fns": "^2.30.0",
-    "flowbite": "^1.8.1",
+    "flowbite": "^2.0.0",
     "flowbite-react": "^0.6.4",
     "next": "latest",
     "next-auth": "latest",
@@ -31,16 +31,16 @@
     "@next/eslint-plugin-next": "^14.0.1",
     "@tailwindcss/typography": "^0.5.10",
     "@types/node": "^20",
-    "@types/react": "^18.2.33",
-    "@typescript-eslint/eslint-plugin": "^6.9.1",
-    "@typescript-eslint/parser": "^6.9.1",
+    "@types/react": "^18.2.37",
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
     "autoprefixer": "^10.4.16",
     "eslint": "^8.53.0",
     "eslint-plugin-react": "^7.33.2",
     "http-status-codes": "^2.3.0",
     "postcss": "^8.4.31",
     "prettier-plugin-organize-imports": "^3.2.3",
-    "tailwindcss": "^3.3.3",
+    "tailwindcss": "^3.3.5",
     "typescript": "^5"
   }
 }
