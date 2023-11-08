@@ -32,7 +32,7 @@ export const getWorkflowInfo = async (
   );
 
   const masterRun = runs.workflow_runs.find(
-    (x) => x.head_branch === request.branch,
+    (x) => x.head_branch === request.branch && x.conclusion !== null,
   );
 
   if (!masterRun) {

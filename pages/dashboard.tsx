@@ -90,6 +90,7 @@ const useColumns = () => {
                 href={workflow.html_url}
                 color={workflow.conclusion as keyof FlowbiteColors}
               >
+                {console.log(workflow)}
                 {workflow.conclusion}
               </Badge>
             </span>
