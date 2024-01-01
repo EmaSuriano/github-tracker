@@ -40,7 +40,7 @@
     "http-status-codes": "^2.3.0",
     "postcss": "^8.4.32",
     "prettier-plugin-organize-imports": "^3.2.4",
-    "tailwindcss": "^3.3.5",
+    "tailwindcss": "^3.4.0",
     "typescript": "^5"
   }
 }
