@@ -19,7 +19,7 @@
     "@octokit/rest": "^20.0.2",
     "date-fns": "^2.30.0",
     "flowbite": "^2.0.0",
-    "flowbite-react": "^0.7.0",
+    "flowbite-react": "^0.7.2",
     "next": "latest",
     "next-auth": "latest",
     "react": "^18.2.0",
