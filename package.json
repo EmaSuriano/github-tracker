@@ -38,7 +38,7 @@
     "eslint": "^8.56.0",
     "eslint-plugin-react": "^7.33.2",
     "http-status-codes": "^2.3.0",
-    "postcss": "^8.4.33",
+    "postcss": "^8.4.35",
     "prettier-plugin-organize-imports": "^3.2.4",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
